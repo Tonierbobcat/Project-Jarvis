@@ -1,0 +1,6 @@
+﻿services:
+  projectjarvis:
+    image: projectjarvis
+    build:
+      context: .
+      dockerfile: ProjectJarvis/Dockerfile

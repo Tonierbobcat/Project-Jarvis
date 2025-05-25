@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectJarvis.API", "ProjectJarvis.API\ProjectJarvis.API.csproj", "{E8668D20-D6DD-4017-8FEF-CF99C11E8CE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CCA16C40-60FD-4D5E-8886-9CC5D6F4E6CD}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectJarvis.Core", "ProjectJarvis.Core\ProjectJarvis.Core.csproj", "{036EC828-9244-4A7D-8743-3EB85C2A36F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8668D20-D6DD-4017-8FEF-CF99C11E8CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8668D20-D6DD-4017-8FEF-CF99C11E8CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8668D20-D6DD-4017-8FEF-CF99C11E8CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8668D20-D6DD-4017-8FEF-CF99C11E8CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{036EC828-9244-4A7D-8743-3EB85C2A36F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{036EC828-9244-4A7D-8743-3EB85C2A36F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{036EC828-9244-4A7D-8743-3EB85C2A36F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{036EC828-9244-4A7D-8743-3EB85C2A36F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
