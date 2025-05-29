@@ -18,7 +18,7 @@ IUserDatabase database = new SQLLiteUserDatabase();
 
 var endpoints = new UserEndpoints(database);
 
-app.MapPost("/create-user", (HttpContext ctx, UserAuthForm form, string name) => endpoints.CreateUser(ctx, form, name));
+app.MapPost("/create-user", (HttpContext ctx, UserAuthForm form) => endpoints.CreateUser(ctx, form));
 
 app.MapPost("/remove-user", (HttpContext ctx, UserAuthForm form) => endpoints.RemoveUser(ctx, form));
 

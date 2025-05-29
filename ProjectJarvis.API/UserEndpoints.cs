@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
 using ProjectJarvis.Core;
 
 namespace ProjectJarvis;
@@ -7,13 +8,17 @@ public class UserEndpoints(IUserDatabase database) {
     
     private readonly IPasswordHasher<UserData> hasher = new PasswordHasher<UserData>();
     
-    public IResult CreateUser(HttpContext ctx, UserAuthForm auth, string name) {
-        var user = UserData.Create(name, user => hasher.HashPassword(user, auth.Password)); 
-    
+    public Results<Created<UserData>, Conflict, BadRequest> CreateUser(HttpContext ctx, UserAuthForm auth)
+    {
+        var exists = database.GetUserFromId(auth.Id) != null;
+        if (exists)
+            return TypedResults.Conflict(); // user already exists
+        
+        var user = UserData.Create(auth.Id, user => hasher.HashPassword(user, auth.Password)); 
         var success = database.Put(auth.Id, user);
-    
-        return !success ? Results.Conflict("User already exists.") :
-            Results.Created($"/users/{auth.Id}", user);
+        return !success
+            ? TypedResults.BadRequest() // not success
+            : TypedResults.Created($"/users/{auth.Id}", user); // ok
     }
 
     public IResult RemoveUser(HttpContext ctx, UserAuthForm auth) {
@@ -45,7 +50,7 @@ public class UserEndpoints(IUserDatabase database) {
         }
 
         var sysMsg = "You are an AI assistant to {user} you are currently talking to {user}. Do what ever {user} asks of you" // todo add this to config
-            .Replace("{user}", user.Name);
+            .Replace("{user}", user.Id);
         
         var log = user.MessageLog;
         try {

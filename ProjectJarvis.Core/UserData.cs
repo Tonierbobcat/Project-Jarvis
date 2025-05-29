@@ -4,18 +4,17 @@ namespace ProjectJarvis.Core;
 
 public class UserData {
     public MessageLog MessageLog { get; private set; } = new();
-    public string Name { get; private set; } = null!;
+    public string Id { get; private set; } = null!;
     public string Password { get; private set; } = null!;
-    
     public Guid Guid { get; private set; }
 
     private UserData() {
         Guid = Guid.NewGuid();
     }
 
-    public static UserData Create(string name, Func<UserData, string> password) {
+    public static UserData Create(string id, Func<UserData, string> password) {
         var user = new UserData {
-            Name = name,
+            Id = id,
         };
         user.Password = password(user);
         return user;

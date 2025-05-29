@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "KXDdk1RMyLpMKlwKfNLm4DrNcfsb4Y5U/xL7FGLxz+g=",
-  "Source": "ProjectJarvis",
-  "BasePath": "_content/ProjectJarvis",
+  "Hash": "tkEcR+h9GVRdAQ9rhJ4onKS81ToM6Zq6NEfqLvbdUBs=",
+  "Source": "ProjectJarvis.API",
+  "BasePath": "_content/ProjectJarvis.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
