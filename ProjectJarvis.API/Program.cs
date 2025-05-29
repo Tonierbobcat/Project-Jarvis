@@ -24,6 +24,8 @@ app.MapPost("/remove-user", (HttpContext ctx, UserAuthForm form) => endpoints.Re
 
 app.MapPost("/message", (HttpContext ctx, MessageRequest request) => endpoints.Message(ctx, request));
 
+app.MapPost("get-user", (HttpContext ctx, UserAuthForm form) => endpoints.GetUser(ctx, form));
+
 app.Run();
 
 public record MessageRequest(UserAuthForm? Auth, Location Location, string Content);
