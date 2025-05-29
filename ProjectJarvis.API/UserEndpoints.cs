@@ -24,12 +24,20 @@ public class UserEndpoints(IUserDatabase database) {
             : TypedResults.Created($"/users/{auth.Id}", user); // ok
     }
 
-    public IResult GetUser(HttpContext ctx, UserAuthForm auth) {
+    public Results<NotFound, Ok<UserData>>  GetUser(HttpContext ctx, UserAuthForm auth) {
         var user = database.GetUserFromId(auth.Id);
         if (user == null) {
             return TypedResults.NotFound();
         }
-        return TypedResults.Ok(user); //todo change this. return user instead
+
+        if (!VerifyCredentials(user, auth)) {
+            //return simple user data without sensitive info 
+            return TypedResults.Ok(user);
+        }
+        else {
+            //return user with hased password ans sensitive info
+            return TypedResults.Ok(user); //todo change this. return user instead
+        }
     }
     
     public IResult RemoveUser(HttpContext ctx, UserAuthForm auth) {
