@@ -11,5 +11,8 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
 /ProjectJarvis.API/bin
-/ProjectJarvis.API/bin/Debug
+/ProjectJarvis.API/obj
+/ProjectJarvis.Core/bin
+/ProjectJarvis.Core/obj
