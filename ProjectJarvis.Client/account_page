@@ -1,0 +1,11 @@
+import tkinter as tk
+
+account_screen_x = 700
+account_screen_y = 350
+
+account_screen = tk.Tk()
+account_screen.title("Jarvis")
+account_screen.geometry()
+
+
+account_screen.mainloop()
