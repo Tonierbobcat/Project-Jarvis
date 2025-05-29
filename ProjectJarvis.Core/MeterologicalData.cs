@@ -1,4 +1,6 @@
-﻿namespace ProjectJarvis.Core;
+﻿using System;
+
+namespace ProjectJarvis.Core;
 
 /**
  * {Temperature} Celsius
