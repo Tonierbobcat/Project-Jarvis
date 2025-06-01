@@ -34,6 +34,8 @@ public class OllamaChatResponseQuery : ILLMResponseQuery {
                 role = node.role switch {
                     SenderType.User => "user",
                     SenderType.Assistant => "assistant",
+                    SenderType.Tool => "tool",
+                    SenderType.System => "system",
                     _ => throw new NotImplementedException()
                 },
                 node.content

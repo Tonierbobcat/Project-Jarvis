@@ -53,5 +53,7 @@ public record Message(SenderType role, string content);
 
 public enum SenderType {
     User,
-    Assistant
+    Assistant,
+    Tool,
+    System
 }
