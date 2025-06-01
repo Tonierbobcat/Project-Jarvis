@@ -10,6 +10,9 @@ using ProjectJarvis.Core;
 namespace ProjectJarvis;
 
 public static class JarvisPostRequests {
+    // the is called in the send message user endpoint. 
+    // this method is flexible in that you do not need to provide userdata only the message log and message
+    // the message can contain information such as meteorological data and other data about the user locations
     public static async Task SendMessage(HttpContext ctx, MessageLog log, string message) {
         ctx.Response.Headers.ContentType = "text/plain";
 

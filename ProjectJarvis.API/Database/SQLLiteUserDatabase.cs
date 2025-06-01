@@ -4,6 +4,7 @@ using ProjectJarvis.Core;
 
 namespace ProjectJarvis;
 
+// with sql lite we can have a .db file that can act as the database without having to reference an external database
 public class SQLLiteUserDatabase : IUserDatabase {
     private Dictionary<string, UserData?> _cachedUsers = new();
     
